@@ -21,3 +21,5 @@ clean:
 gb2260/data.py: data/GB2260*.txt
 	$(PYTHON) generate.py $? $@
 
+data/GB2260*.txt:
+	echo 1 > /dev/null
