@@ -72,7 +72,7 @@ class Division(object):
                     if PY2:
                         value = value.encode('utf-8')
 
-                    if value.find(name) != -1 or name.find(value) != -1:
+                    if name == value or value.find(name) != -1 or name.find(value) != -1:
                         result.append(cls.get(key))
 
         return result
