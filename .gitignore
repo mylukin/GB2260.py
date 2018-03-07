@@ -1,0 +1,12 @@
+*.pyc
+*.pyo
+*.egg-info
+__pycache__
+/.idea
+/.cache
+/.tox
+/.coverage
+/build
+/dist
+/htmlcov
+/gb2260/data.py
