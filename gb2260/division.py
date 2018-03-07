@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import weakref
 
 from .data import data
-from ._compat import unicode_compatible, unicode_type
+from ._compat import unicode_compatible, unicode_type, PY2
 
 
 @unicode_compatible
@@ -69,8 +69,9 @@ class Division(object):
                 if name is None:
                     result.append(cls.get(key))
                 else:
-                    value = value.encode('utf-8')
-                    name  = name.encode('utf-8')
+                    if PY2:
+                        value = value.encode('utf-8')
+
                     if value.find(name) != -1 or name.find(value) != -1:
                         result.append(cls.get(key))
 
